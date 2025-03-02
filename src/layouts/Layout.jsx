@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className="flex flex-col flex-1">
         <Topbar toggleSidebar={toggleSidebar} />
-        <main className="flex-1 p-4 overflow-auto">{children}</main>
+        <main className="flex-1 overflow-auto">{children}</main>
       </div>
     </div>
   );
