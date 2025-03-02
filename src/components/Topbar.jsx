@@ -1,11 +1,46 @@
+import React, { useState } from "react";
+import SearchBar from "./SearchBar";
+
 const Topbar = ({ toggleSidebar }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
-    <header className="topbar-min-h bg-white flex items-center px-4 border-b border-[#e6eff5]">
-      <a href="#" onClick={toggleSidebar} className="md:hidden">
-        <img src="./src/assets/icons/menu.svg" alt="Menu" />
-      </a>
-      <h1 className="text-lg">Overview</h1>
-    </header>
+    <div className="bg-white md:px-[40px] px-[26px] md:border-b md:border-[#e6eff5]">
+      <header className="topbar-min-h flex items-center justify-between font-inter">
+        <a href="#" onClick={toggleSidebar} className="md:hidden">
+          <img src="./src/assets/icons/menu.svg" alt="Menu" />
+        </a>
+        <h1 className="font-semibold md:text-3xl text-lg text-[#343c6a]">
+          Overview
+        </h1>
+        <div className="flex items-center gap-8">
+          <div className="hidden lg:block">
+            <SearchBar searchTerm={searchTerm} onChange={handleInputChange} />
+          </div>
+          <a href="#" className="topbar-icon">
+            <img src="./src/assets/icons/settings.svg" alt="Settings" />
+          </a>
+          <a href="#" className="topbar-icon">
+            <img
+              src="./src/assets/icons/notification.svg"
+              alt="Notifications"
+            />
+          </a>
+          <img
+            src="./src/assets/images/avatar.png"
+            alt="Avatar"
+            className="rounded-full md:w-[60px] md:h-[60px] w-[35px] h-[35px] cursor-pointer"
+          />
+        </div>
+      </header>
+      <div className="block lg:hidden pb-4">
+        <SearchBar searchTerm={searchTerm} onChange={handleInputChange} />
+      </div>
+    </div>
   );
 };
 
