@@ -1,1 +1,47 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Mont Heavy";
+  src: url("./assets/fonts/mont/Mont-HeavyDEMO.otf") format("opentype");
+}
+
+.font-mont-heavy {
+  font-family: "Mont Heavy", sans-serif;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+.topbar-min-h {
+  @apply min-h-[101px];
+}
+
+.sidebar-menu-item {
+  @apply relative min-h-[62px] flex items-center text-[#b1b1b1] text-[18px];
+}
+
+.sidebar-menu-item.active,
+.sidebar-menu-item:hover {
+  @apply text-[#2d60ff];
+}
+
+.sidebar-menu-item:not(.active):hover {
+  @apply text-[#5780ff] opacity-80;
+}
+
+.sidebar-menu-item img {
+  @apply px-[26px] ml-[18px];
+  filter: invert(76%) sepia(4%) saturate(10%) hue-rotate(358deg) brightness(95%)
+    contrast(86%);
+}
+
+.sidebar-menu-item.active img,
+.sidebar-menu-item:hover img {
+  filter: invert(29%) sepia(53%) saturate(3471%) hue-rotate(220deg)
+    brightness(99%) contrast(104%);
+}
+
+.sidebar-menu-item.active::before {
+  @apply content-[''] absolute left-[-6px] top-0 w-[12px] h-full bg-[#2d60ff] rounded-full;
+}
