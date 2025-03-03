@@ -19,10 +19,7 @@ const Card = ({ index, card }) => {
             </p>
           </div>
           <div>
-            <img
-              src={`./src/assets/icons/cards/chip-${index}.svg`}
-              alt="Chip"
-            />
+            <img src={`/assets/icons/cards/chip-${index}.svg`} alt="Chip" />
           </div>
         </div>
         <div className="flex flex-1 w-full min-h-[72px]">
@@ -41,10 +38,7 @@ const Card = ({ index, card }) => {
           {card_number}
         </div>
         <div>
-          <img
-            src={`./src/assets/icons/cards/group-${index}.svg`}
-            alt="Group"
-          />
+          <img src={`/assets/icons/cards/group-${index}.svg`} alt="Group" />
         </div>
       </div>
     </div>

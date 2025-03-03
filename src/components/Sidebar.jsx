@@ -10,7 +10,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
       <div className="topbar-min-h flex items-center justify-center">
         <a href="#" className="flex items-center justify-center">
           <img
-            src="./src/assets/icons/logo.svg"
+            src="/assets/icons/logo.svg"
             alt="Logo"
             className="w-[36px] m-[10px]"
           />

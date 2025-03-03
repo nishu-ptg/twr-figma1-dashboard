@@ -6,10 +6,7 @@ const NavbarItem = ({ item, isActive, onClick }) => {
       className={`sidebar-menu-item ${isActive ? "active" : ""}`}
       onClick={() => onClick(item.id)}
     >
-      <img
-        src={item.icon || `./src/assets/icons/menu/${item.id}.svg`}
-        alt="Icon"
-      />
+      <img src={item.icon || `/assets/icons/menu/${item.id}.svg`} alt="Icon" />
       <span>{item.name}</span>
     </a>
   );

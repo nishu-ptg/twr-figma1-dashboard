@@ -3,7 +3,7 @@ const SearchBar = ({ searchTerm, onChange }) => {
     <div className="focus-within:bg-[#f3f3f3] bg-[#f5f7fa] rounded-full w-full lg:w-[255px] flex items-center px-[10px] h-[40px] lg:h-[50px]">
       <div className="flex items-center">
         <img
-          src="./src/assets/icons/magnifying-glass.svg"
+          src="/assets/icons/magnifying-glass.svg"
           alt="Icon"
           className="px-[15px]"
         />
