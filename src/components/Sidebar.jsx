@@ -23,7 +23,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
           onClick={toggleSidebar}
           className="md:hidden absolute right-[20px]"
         >
-          <img src="./src/assets/icons/close.svg" alt="Close" />
+          <img src="/assets/icons/close.svg" alt="Close" />
         </a>
       </div>
 

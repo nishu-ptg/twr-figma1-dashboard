@@ -1,3 +1,4 @@
+import ExpenseStatistics from "./components/ExpenseStatistics";
 import MyCards from "./components/MyCards";
 import RecentTransaction from "./components/RecentTransaction";
 
@@ -10,6 +11,12 @@ const Dashboard = () => {
         </div>
         <div className="col-span-12 lg:col-span-4">
           <RecentTransaction />
+        </div>
+      </div>
+      <div className="grid grid-cols-12 gap-[30px]">
+        <div className="col-span-12 lg:col-span-8 gap-[30px]"></div>
+        <div className="col-span-12 lg:col-span-4">
+          <ExpenseStatistics />
         </div>
       </div>
     </div>
