@@ -4,11 +4,11 @@ const TransactionItem = ({ index, transaction, bgColor }) => {
   return (
     <li className="flex items-center gap-[15px]">
       <div
-        className="w-[55px] h-[55px] rounded-full flex md:hidden lg:flex items-center justify-center "
+        className="w-[55px] h-[55px] rounded-full flex items-center justify-center "
         style={{ backgroundColor: bgColor }}
       >
         <img
-          src={icon || `./src/assets/icons/transaction/${index}.svg`}
+          src={icon || `/assets/icons/transaction/${index}.svg`}
           alt="Icon"
         />
       </div>
