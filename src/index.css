@@ -9,8 +9,8 @@
   font-family: "Mont Heavy", sans-serif;
 }
 
-.font-inter {
-  font-family: "Inter", sans-serif;
+.font-lato {
+  font-family: "Lato", sans-serif;
 }
 
 body {
@@ -67,5 +67,41 @@ input.search::placeholder {
 }
 
 .rounded-card {
-  @apply bg-white rounded-[24px] flex items-center justify-center;
+  @apply bg-white rounded-[24px] flex items-center justify-center overflow-hidden;
+}
+
+.c-card-0 {
+  @apply text-white;
+}
+
+.c-card-0 .c-card-top {
+  @apply bg-gradient-to-br from-[#4b48ed] to-[#110cf4];
+}
+
+.c-card-0 .c-card-bottom {
+  @apply bg-gradient-to-br from-[#5e5bf0] to-[#0f0bf4];
+}
+
+.c-card-0 h4 {
+  @apply text-white;
+}
+
+.c-card-0 h5 {
+  @apply text-white/70;
+}
+
+.c-card-1 {
+  @apply text-[#343C6A] border border-[#DFEAF2] box-border;
+}
+
+.c-card-1 .c-card-bottom {
+  @apply border-t border-[#dfeaf2];
+}
+
+.c-card-1 h4 {
+  @apply text-[#718EBF];
+}
+
+.c-card-1 h5 {
+  @apply text-[#718EBF];
 }

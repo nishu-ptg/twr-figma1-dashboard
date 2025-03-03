@@ -13,8 +13,10 @@ const TransactionItem = ({ index, transaction, bgColor }) => {
         />
       </div>
       <div className="flex flex-col flex-1">
-        <p className="text-[16px] font-medium">{name}</p>
-        <span className="text-[15px] text-[#718EBF] mt-[2px]">{date}</span>
+        <p className="text-[16px] font-medium line-clamp-1">{name}</p>
+        <span className="text-[15px] text-[#718EBF] mt-[2px] line-clamp-1">
+          {date}
+        </span>
       </div>
       <div
         className={`flex items-center font-medium ${

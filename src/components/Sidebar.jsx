@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   return (
     <aside
-      className={`w-[250px] bg-white flex flex-col h-screen border-r border-[#e6eff5] fixed top-0 left-0 transition-transform duration-300 ease-in-out ${
+      className={`w-full md:w-[250px] bg-white flex flex-col h-screen border-r border-[#e6eff5] fixed top-0 left-0 transition-transform duration-300 ease-in-out ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       } md:translate-x-0 md:relative md:block`}
     >
@@ -18,7 +18,11 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
             BankDash.
           </h2>
         </a>
-        <a href="#" onClick={toggleSidebar} className="md:hidden ml-2">
+        <a
+          href="#"
+          onClick={toggleSidebar}
+          className="md:hidden absolute right-[20px]"
+        >
           <img src="./src/assets/icons/close.svg" alt="Close" />
         </a>
       </div>

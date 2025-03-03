@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex flex-col font-inter py-[10px] space-y-[2px]">
+    <nav className="flex flex-col py-[10px] space-y-[2px]">
       {navItems.map((item) => (
         <NavbarItem
           key={item.id}
