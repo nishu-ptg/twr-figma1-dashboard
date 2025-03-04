@@ -1,7 +1,11 @@
 import React from "react";
+import { useDataSource } from "../../context/DataSourceContext";
 import WeeklyActivityChart from "./WeeklyActivityChart";
 
 const WeeklyActivity = () => {
+  const { useApiData } = useDataSource();
+  console.log(useApiData);
+
   const data = [
     { days: "Sat", deposit: 480, withdraw: 250 },
     { days: "Sun", deposit: 350, withdraw: 130 },
