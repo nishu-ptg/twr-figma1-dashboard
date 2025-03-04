@@ -1,5 +1,36 @@
 import React from "react";
 
+const formatValidity = (validity) => {
+  if (/^\d{2}\/\d{2}$/.test(validity)) return validity;
+
+  const date = new Date(validity);
+  if (!date.getTime()) return validity;
+
+  console.log(date);
+  console.log(date.getFullYear());
+  console.log(date.getTime());
+
+  return [
+    date.getFullYear() % 100,
+    (date.getMonth() + 1).toString().padStart(2, "0"),
+  ].join("/");
+};
+
+const formatCardNumber = (cardNumber) => {
+  if (isNaN(cardNumber)) return cardNumber;
+
+  let chunks = cardNumber.match(/.{1,4}/g);
+  return chunks
+    .map((chunk, index) => {
+      if (index === 0 || index === chunks.length - 1) {
+        return chunk;
+      } else {
+        return "****";
+      }
+    })
+    .join(" ");
+};
+
 const MyCardsItem = ({ index, card }) => {
   const { name, balance, card_number, validity } = card;
   return (
@@ -29,13 +60,15 @@ const MyCardsItem = ({ index, card }) => {
           </div>
           <div className="flex-1">
             <h5 className="text-[12px] text-white/70">VALID THRU</h5>
-            <p className="mt-[-2px] tracking-tight">{validity}</p>
+            <p className="mt-[-2px] tracking-tight">
+              {formatValidity(validity)}
+            </p>
           </div>
         </div>
       </div>
       <div className="c-card-bottom flex-grow-[70] flex items-center w-full px-[27px] justify-between">
         <div className="text-[22px] min-h-[70px] flex items-center tracking-wide">
-          {card_number}
+          {formatCardNumber(card_number)}
         </div>
         <div>
           <img src={`/assets/icons/cards/group-${index}.svg`} alt="Group" />

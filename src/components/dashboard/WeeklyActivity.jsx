@@ -4,7 +4,7 @@ import useFetchData from "../../hooks/useFetchData";
 import WeeklyActivityChart from "./WeeklyActivityChart";
 
 const WeeklyActivity = () => {
-  const defaultWeeklyData = useMemo(
+  const defaultData = useMemo(
     () => [
       { days: "Sat", deposit: 480, withdraw: 250 },
       { days: "Sun", deposit: 350, withdraw: 130 },
@@ -20,9 +20,9 @@ const WeeklyActivity = () => {
   const { useApiData } = useDataSource();
 
   const { apiData, loading, error } = useFetchData(
-    `${import.meta.env.VITE_ENDPOINT_BASE_DOMAIN}/api/weekly-activity-list`,
+    `${import.meta.env.VITE_ENDPOINT1_API_BASE_URL}/weekly-activity-list`,
     useApiData,
-    defaultWeeklyData
+    defaultData
   );
 
   const data = useApiData ? apiData?.data ?? [] : apiData;
@@ -36,9 +36,7 @@ const WeeklyActivity = () => {
         {loading ? (
           <p>Loading...</p>
         ) : error ? (
-          <div>
-            <p className="text-red-500">Error: {error}</p>
-          </div>
+          <p className="text-red-500">Error: {error}</p>
         ) : (
           <WeeklyActivityChart data={data} />
         )}

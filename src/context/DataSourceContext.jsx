@@ -5,9 +5,11 @@ const DataSourceContext = createContext();
 
 export const DataSourceProvider = ({ children }) => {
   const [searchParams] = useSearchParams();
+  const apiDataParamKey = "use-api-data";
+
   const useApiData =
-    searchParams.has("use-api-data") &&
-    searchParams.get("use-api-data") !== "false";
+    searchParams.has(apiDataParamKey) &&
+    searchParams.get(apiDataParamKey) !== "false";
 
   return (
     <DataSourceContext.Provider value={{ useApiData }}>
