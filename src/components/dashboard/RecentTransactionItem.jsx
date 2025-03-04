@@ -1,21 +1,44 @@
+const formatDate = (date) => {
+  if (/^[0-9]{1,2} [A-Za-z]+ [0-9]{4}$/.test(date)) return date;
+
+  const newDate = new Date(date);
+  if (isNaN(newDate.getTime())) return date;
+
+  return newDate.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+};
+
 const RecentTransactionItem = ({ index, transaction, bgColor }) => {
-  const { name, date, amount, icon } = transaction;
+  const { name, date, amount, image } = transaction;
+  const formattedDate = formatDate(date);
 
   return (
     <li className="flex items-center gap-[15px]">
       <div
-        className="w-[55px] h-[55px] rounded-full flex items-center justify-center "
-        style={{ backgroundColor: bgColor }}
+        className="w-[55px] h-[55px] rounded-full flex items-center justify-center overflow-hidden border-1 border-red-500"
+        style={{ backgroundColor: bgColor, borderColor: bgColor }}
       >
         <img
-          src={icon || `/assets/icons/transaction/${index}.svg`}
+          src={
+            image
+              ? `${import.meta.env.VITE_ENDPOINT1_IMAGE_BASE_URL}/${image}`
+              : `/assets/icons/transaction/${index}.svg`
+          }
           alt="Icon"
         />
       </div>
       <div className="flex flex-col flex-1">
-        <p className="text-[16px] font-medium line-clamp-1">{name}</p>
-        <span className="text-[15px] text-[#718EBF] mt-[2px] line-clamp-1">
-          {date}
+        <p className="text-[16px] font-medium line-clamp-1" title={name}>
+          {name}
+        </p>
+        <span
+          className="text-[15px] text-[#718EBF] mt-[2px] line-clamp-1"
+          title={formattedDate}
+        >
+          {formattedDate}
         </span>
       </div>
       <div
