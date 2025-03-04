@@ -6,10 +6,6 @@ const formatValidity = (validity) => {
   const date = new Date(validity);
   if (!date.getTime()) return validity;
 
-  console.log(date);
-  console.log(date.getFullYear());
-  console.log(date.getTime());
-
   return [
     date.getFullYear() % 100,
     (date.getMonth() + 1).toString().padStart(2, "0"),

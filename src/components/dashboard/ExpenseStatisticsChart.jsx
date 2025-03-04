@@ -7,11 +7,11 @@ Chart.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 const ExpenseStatisticsChart = ({ data }) => {
   const pieData = {
-    labels: data.labels,
+    labels: data.labels || [],
     datasets: [
       {
-        data: data.values,
-        backgroundColor: data.colors,
+        data: data.values || [],
+        backgroundColor: data.colors || [],
         borderWidth: 8,
         borderColor: "#ffffff",
       },
@@ -26,6 +26,7 @@ const ExpenseStatisticsChart = ({ data }) => {
       datalabels: {
         color: "#fff",
         font: {
+          family: "Inter",
           weight: "bold",
         },
         textAlign: "center",
