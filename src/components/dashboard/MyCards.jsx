@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card";
+import MyCardsItem from "./MyCardsItem";
 
 const MyCards = () => {
   const cards = [
@@ -30,7 +30,9 @@ const MyCards = () => {
       </div>
       <div className="grid grid-cols-2 gap-[30px] h-full">
         {cards.map((card, index) =>
-          index < 2 ? <Card key={index} index={index} card={card} /> : null
+          index < 2 ? (
+            <MyCardsItem key={index} index={index} card={card} />
+          ) : null
         )}
       </div>
     </div>

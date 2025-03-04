@@ -1,5 +1,5 @@
 import React from "react";
-import TransactionItem from "./TransactionItem";
+import RecentTransactionItem from "./RecentTransactionItem";
 
 const RecentTransaction = () => {
   const bgColors = ["#fff5d9", "#e7edff", "#dcfaf8"];
@@ -17,7 +17,7 @@ const RecentTransaction = () => {
       <div className="rounded-card p-[25px] flex items-center flex-1">
         <ul className="flex flex-col w-full gap-[10px]">
           {transactions.map((transaction, index) => (
-            <TransactionItem
+            <RecentTransactionItem
               key={index}
               index={index}
               transaction={transaction}

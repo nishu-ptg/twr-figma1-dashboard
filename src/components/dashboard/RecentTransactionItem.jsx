@@ -1,4 +1,4 @@
-const TransactionItem = ({ index, transaction, bgColor }) => {
+const RecentTransactionItem = ({ index, transaction, bgColor }) => {
   const { name, date, amount, icon } = transaction;
 
   return (
@@ -30,4 +30,4 @@ const TransactionItem = ({ index, transaction, bgColor }) => {
   );
 };
 
-export default TransactionItem;
+export default RecentTransactionItem;

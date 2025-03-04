@@ -5,7 +5,7 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 
 Chart.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
-const ExpenseChart = ({ data }) => {
+const ExpenseStatisticsChart = ({ data }) => {
   const pieData = {
     labels: data.labels,
     datasets: [
@@ -49,4 +49,4 @@ const ExpenseChart = ({ data }) => {
   );
 };
 
-export default ExpenseChart;
+export default ExpenseStatisticsChart;

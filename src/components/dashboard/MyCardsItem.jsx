@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ index, card }) => {
+const MyCardsItem = ({ index, card }) => {
   const { name, balance, card_number, validity } = card;
   return (
     <div
@@ -45,4 +45,4 @@ const Card = ({ index, card }) => {
   );
 };
 
-export default Card;
+export default MyCardsItem;

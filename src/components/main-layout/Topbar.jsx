@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SearchBar from "./SearchBar";
+import TopbarSearch from "./TopbarSearch";
 
 const Topbar = ({ toggleSidebar }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,7 +19,10 @@ const Topbar = ({ toggleSidebar }) => {
         </h1>
         <div className="flex items-center gap-8">
           <div className="hidden lg:block">
-            <SearchBar searchTerm={searchTerm} onChange={handleInputChange} />
+            <TopbarSearch
+              searchTerm={searchTerm}
+              onChange={handleInputChange}
+            />
           </div>
           <a href="#" className="topbar-icon">
             <img src="/assets/icons/settings.svg" alt="Settings" />
@@ -35,7 +38,7 @@ const Topbar = ({ toggleSidebar }) => {
         </div>
       </header>
       <div className="block lg:hidden pb-4">
-        <SearchBar searchTerm={searchTerm} onChange={handleInputChange} />
+        <TopbarSearch searchTerm={searchTerm} onChange={handleInputChange} />
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import ExpenseChart from "./ExpenseChart";
+import ExpenseStatisticsChart from "./ExpenseStatisticsChart";
 
 const ExpenseStatistics = () => {
   const data = {
@@ -14,7 +14,7 @@ const ExpenseStatistics = () => {
         <h2>Expense Statistics</h2>
       </div>
       <div className="rounded-card p-[30px] flex items-center flex-1">
-        <ExpenseChart data={data} />
+        <ExpenseStatisticsChart data={data} />
       </div>
     </div>
   );

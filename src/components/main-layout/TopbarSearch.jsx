@@ -1,4 +1,4 @@
-const SearchBar = ({ searchTerm, onChange }) => {
+const TopbarSearch = ({ searchTerm, onChange }) => {
   return (
     <div className="focus-within:bg-[#f3f3f3] bg-[#f5f7fa] rounded-full w-full lg:w-[255px] flex items-center px-[10px] h-[40px] lg:h-[50px]">
       <div className="flex items-center">
@@ -21,4 +21,4 @@ const SearchBar = ({ searchTerm, onChange }) => {
   );
 };
 
-export default SearchBar;
+export default TopbarSearch;
