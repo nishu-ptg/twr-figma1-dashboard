@@ -1,7 +1,7 @@
-import ExpenseStatistics from "./components/ExpenseStatistics";
-import MyCards from "./components/MyCards";
-import RecentTransaction from "./components/RecentTransaction";
-import WeeklyActivity from "./components/WeeklyActivity";
+import ExpenseStatistics from "./../components/dashboard/ExpenseStatistics";
+import MyCards from "./../components/dashboard/MyCards";
+import WeeklyActivity from "./../components/dashboard/WeeklyActivity";
+import RecentTransaction from "./../components/dashboard/RecentTransaction";
 
 const Dashboard = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import Sidebar from "../components/main-layout/Sidebar";
+import Topbar from "../components/main-layout/Topbar";
 
 const Layout = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
