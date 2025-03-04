@@ -38,6 +38,12 @@ const WeeklyActivityChart = ({ data = [] }) => {
     ],
   };
 
+  const maxValue = Math.max(
+    ...data.map((d) => Math.max(d.deposit, d.withdraw))
+  );
+  const magnitude = Math.pow(10, Math.floor(Math.log10(maxValue)));
+  const stepSize = Math.ceil(maxValue / 5 / magnitude) * magnitude;
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,
@@ -77,7 +83,7 @@ const WeeklyActivityChart = ({ data = [] }) => {
       },
       y: {
         ticks: {
-          stepSize: 100,
+          stepSize: stepSize,
           font: {
             family: "Inter",
             size: 12,

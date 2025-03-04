@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useDataSource } from "../../context/DataSourceContext";
+import useFetchData from "../../hooks/useFetchData";
 import WeeklyActivityChart from "./WeeklyActivityChart";
 
 const WeeklyActivity = () => {
-  const { useApiData } = useDataSource();
-  console.log(useApiData);
+  const defaultWeeklyData = useMemo(
+    () => [
+      { days: "Sat", deposit: 480, withdraw: 250 },
+      { days: "Sun", deposit: 350, withdraw: 130 },
+      { days: "Mon", deposit: 330, withdraw: 270 },
+      { days: "Tue", deposit: 480, withdraw: 380 },
+      { days: "Wed", deposit: 150, withdraw: 250 },
+      { days: "Thu", deposit: 390, withdraw: 250 },
+      { days: "Fri", deposit: 400, withdraw: 350 },
+    ],
+    []
+  );
 
-  const data = [
-    { days: "Sat", deposit: 480, withdraw: 250 },
-    { days: "Sun", deposit: 350, withdraw: 130 },
-    { days: "Mon", deposit: 330, withdraw: 270 },
-    { days: "Tue", deposit: 480, withdraw: 380 },
-    { days: "Wed", deposit: 150, withdraw: 250 },
-    { days: "Thu", deposit: 390, withdraw: 250 },
-    { days: "Fri", deposit: 400, withdraw: 350 },
-  ];
+  const { useApiData } = useDataSource();
+
+  const { apiData, loading, error } = useFetchData(
+    `${import.meta.env.VITE_ENDPOINT_BASE_DOMAIN}/api/weekly-activity-list`,
+    useApiData,
+    defaultWeeklyData
+  );
+
+  const data = useApiData ? apiData?.data ?? [] : apiData;
 
   return (
     <div className="flex flex-col h-full">
@@ -22,7 +33,15 @@ const WeeklyActivity = () => {
         <h2>Weekly Activity</h2>
       </div>
       <div className="rounded-card px-[30px] py-[24px] flex items-center flex-1 ">
-        <WeeklyActivityChart data={data} />
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <div>
+            <p className="text-red-500">Error: {error}</p>
+          </div>
+        ) : (
+          <WeeklyActivityChart data={data} />
+        )}
       </div>
     </div>
   );
