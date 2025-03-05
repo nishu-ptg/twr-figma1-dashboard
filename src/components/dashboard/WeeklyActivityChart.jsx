@@ -66,7 +66,12 @@ const WeeklyActivityChart = ({ data = [] }) => {
         },
       },
       tooltip: {
-        enabled: false,
+        enabled: true,
+        displayColors: false,
+        callbacks: {
+          label: (tooltipItem) => tooltipItem.raw,
+          title: () => "",
+        },
       },
     },
     scales: {
