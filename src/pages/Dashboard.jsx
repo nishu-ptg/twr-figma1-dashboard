@@ -3,6 +3,7 @@ import MyCards from "./../components/dashboard/MyCards";
 import WeeklyActivity from "./../components/dashboard/WeeklyActivity";
 import RecentTransaction from "./../components/dashboard/RecentTransaction";
 import BalanceHistory from "../components/dashboard/BalanceHistory";
+import QuickTransfer from "../components/dashboard/QuickTransfer";
 
 const Dashboard = () => {
   return (
@@ -29,7 +30,9 @@ const Dashboard = () => {
 
       {/* 3rd row */}
       <div className="grid grid-cols-12 gap-[30px]">
-        <div className="col-span-12 lg:col-span-5 gap-[30px]"></div>
+        <div className="col-span-12 lg:col-span-5 gap-[30px]">
+          <QuickTransfer />
+        </div>
         <div className="col-span-12 lg:col-span-7">
           <BalanceHistory />
         </div>

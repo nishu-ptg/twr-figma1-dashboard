@@ -12,7 +12,7 @@ const BalanceHistoryChart = ({ data }) => {
     datasets: [
       {
         data: data.map((item) => item.value),
-        borderColor: "#6f6cf8",
+        borderColor: "#1814f3",
         backgroundColor: (ctx) => {
           const chart = ctx.chart;
           if (!chart.chartArea) return "transparent";

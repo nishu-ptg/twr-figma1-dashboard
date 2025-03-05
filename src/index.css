@@ -105,3 +105,7 @@ input.search::placeholder {
 .c-card-1 h5 {
   @apply text-[#718EBF];
 }
+
+.quick-transfer-user.active p {
+  @apply font-bold;
+}
