@@ -1,31 +1,8 @@
-import React, { useMemo } from "react";
-import { useDataSource } from "../../context/DataSourceContext";
-import useFetchData from "../../hooks/useFetchData";
+import { useWeeklyActivity } from "../../hooks/useDashboardApi";
 import WeeklyActivityChart from "./WeeklyActivityChart";
 
 const WeeklyActivity = () => {
-  const defaultData = useMemo(
-    () => [
-      { days: "Sat", deposit: 480, withdraw: 250 },
-      { days: "Sun", deposit: 350, withdraw: 130 },
-      { days: "Mon", deposit: 330, withdraw: 270 },
-      { days: "Tue", deposit: 480, withdraw: 380 },
-      { days: "Wed", deposit: 150, withdraw: 250 },
-      { days: "Thu", deposit: 390, withdraw: 250 },
-      { days: "Fri", deposit: 400, withdraw: 350 },
-    ],
-    []
-  );
-
-  const { useApiData } = useDataSource();
-
-  const { apiData, loading, error } = useFetchData(
-    `${import.meta.env.VITE_ENDPOINT1_API_BASE_URL}/weekly-activity-list`,
-    useApiData,
-    defaultData
-  );
-
-  const data = useApiData ? apiData?.data ?? [] : apiData;
+  const { data, loading, error } = useWeeklyActivity();
 
   return (
     <div className="flex flex-col h-full">

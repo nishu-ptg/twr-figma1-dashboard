@@ -1,9 +1,11 @@
-import ExpenseStatistics from "./../components/dashboard/ExpenseStatistics";
-import MyCards from "./../components/dashboard/MyCards";
-import WeeklyActivity from "./../components/dashboard/WeeklyActivity";
-import RecentTransaction from "./../components/dashboard/RecentTransaction";
-import BalanceHistory from "../components/dashboard/BalanceHistory";
-import QuickTransfer from "../components/dashboard/QuickTransfer";
+import {
+  MyCards,
+  RecentTransactions,
+  WeeklyActivity,
+  ExpenseStatistics,
+  QuickTransfer,
+  BalanceHistory,
+} from "../components/dashboard";
 
 const Dashboard = () => {
   return (
@@ -13,8 +15,8 @@ const Dashboard = () => {
         <div className="col-span-12 lg:col-span-8 gap-[30px]">
           <MyCards />
         </div>
-        <div className="col-span-12 lg:col-span-4">
-          <RecentTransaction />
+        <div className="flex flex-col col-span-12 lg:col-span-4">
+          <RecentTransactions />
         </div>
       </div>
 
@@ -23,7 +25,7 @@ const Dashboard = () => {
         <div className="col-span-12 lg:col-span-8 gap-[30px]">
           <WeeklyActivity />
         </div>
-        <div className="col-span-12 lg:col-span-4">
+        <div className="flex flex-col col-span-12 lg:col-span-4">
           <ExpenseStatistics />
         </div>
       </div>
