@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useQuickTransfer } from "../../hooks/useDashboardApi";
 import QuickTransferUser from "./QuickTransferUser";
 import QuickTransferForm from "./QuickTransferForm";
 
 const QuickTransfer = () => {
-  const defaultData = [
-    { name: "Livia Bator", designation: "CEO" },
-    { name: "Randy Press", designation: "Director" },
-    { name: "Workman", designation: "Designer" },
-  ];
+  const { apiData: data, loading, error } = useQuickTransfer();
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -19,16 +16,24 @@ const QuickTransfer = () => {
       <div className="rounded-card px-0 md:px-[25px] py-[35px] flex flex-col justify-between flex-1">
         <div className="flex flex-1 w-full gap-[30px]">
           <div className="flex flex-1 justify-between">
-            {defaultData.map((user, index) =>
-              index < 3 ? (
-                <QuickTransferUser
-                  key={index}
-                  index={index}
-                  user={user}
-                  isActive={activeIndex === index}
-                  onClick={() => setActiveIndex(index)}
-                />
-              ) : null
+            {loading ? (
+              <p>Loading...</p>
+            ) : error ? (
+              <p className="text-red-500">Error: {error}</p>
+            ) : (
+              <div className="flex flex-1 justify-between">
+                {data.map((user, index) =>
+                  index < 3 ? (
+                    <QuickTransferUser
+                      key={index}
+                      index={index}
+                      user={user}
+                      isActive={activeIndex === index}
+                      onClick={() => setActiveIndex(index)}
+                    />
+                  ) : null
+                )}
+              </div>
             )}
           </div>
           <div className="flex items-center ">
@@ -37,7 +42,7 @@ const QuickTransfer = () => {
             </button>
           </div>
         </div>
-        <QuickTransferForm activeUser={defaultData[activeIndex]} />
+        <QuickTransferForm activeUser={data[activeIndex]} />
       </div>
     </div>
   );

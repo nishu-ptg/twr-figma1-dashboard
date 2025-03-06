@@ -29,8 +29,28 @@ export const weeklyActivityData = [
   { days: "Fri", deposit: 400, withdraw: 350 },
 ];
 
-export const ExpenseStatisticsData = {
+export const expenseStatisticsData = {
   labels: ["Investment", "Entertainment", "Bill Expense", "Others"],
   values: [37.5, 25, 12.5, 25],
   colors: ["#fa00ff", "#343c6a", "#fc7900", "#1814f3", "#ff0000"],
 };
+
+export const quickTransferData = [
+  { name: "Livia Bator", designation: "CEO" },
+  { name: "Randy Press", designation: "Director" },
+  { name: "Workman", designation: "Designer" },
+];
+
+export const balanceHistorytData = [
+  { month: "Jul", value: 100 },
+  { month: "Aug", value: 325 },
+  { month: "Sep", value: 235 },
+  { month: "Oct", value: 480 },
+  { month: "Nov", value: 440 },
+  { month: "Dec", value: 775 },
+  { month: "Jan", value: 205 },
+  { month: "Feb", value: 570 },
+  { month: "Mar", value: 230 },
+  { month: "Apr", value: 620 },
+  { month: "", value: 595 },
+];

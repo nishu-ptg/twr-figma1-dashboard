@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 const QuickTransferForm = ({ activeUser }) => {
   const [amount, setAmount] = useState("525.50");
   const debounceTimeout = useRef(null);
+  const inputRef = useRef(null);
 
   const handleOnChange = (e) => {
     const inputValue = e.target.value;
@@ -18,7 +19,12 @@ const QuickTransferForm = ({ activeUser }) => {
   };
 
   const handleTransfer = () => {
-    if (amount === "") return;
+    if (amount === "") {
+      alert("Amount not specified!");
+      inputRef.current.focus();
+      return;
+    }
+
     const formattedAmount = parseFloat(amount).toLocaleString("en-US", {
       style: "currency",
       currency: "USD",
@@ -39,6 +45,7 @@ const QuickTransferForm = ({ activeUser }) => {
             className="w-full bg-transparent border-none outline-none px-[18px] md:px-[30px] text-[#718EBF]"
             value={amount}
             onChange={handleOnChange}
+            ref={inputRef}
           />
         </div>
         <button

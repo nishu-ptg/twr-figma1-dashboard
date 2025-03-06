@@ -1,20 +1,9 @@
 import React from "react";
+import { useBalanceHistory } from "../../hooks/useDashboardApi";
 import BalanceHistoryChart from "./BalanceHistoryChart";
 
 const BalanceHistory = () => {
-  const defaultData = [
-    { month: "Jul", value: 100 },
-    { month: "Aug", value: 325 },
-    { month: "Sep", value: 235 },
-    { month: "Oct", value: 480 },
-    { month: "Nov", value: 440 },
-    { month: "Dec", value: 775 },
-    { month: "Jan", value: 205 },
-    { month: "Feb", value: 570 },
-    { month: "Mar", value: 230 },
-    { month: "Apr", value: 620 },
-    { month: "", value: 595 },
-  ];
+  const { apiData: data, loading, error } = useBalanceHistory();
 
   return (
     <div className="flex flex-col h-full">
@@ -22,7 +11,13 @@ const BalanceHistory = () => {
         <h2>Balance History</h2>
       </div>
       <div className="rounded-card px-[10px] md:px-[22px] py-[24px] flex items-center flex-1">
-        <BalanceHistoryChart data={defaultData} />
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p className="text-red-500">Error: {error}</p>
+        ) : (
+          <BalanceHistoryChart data={data} />
+        )}
       </div>
     </div>
   );

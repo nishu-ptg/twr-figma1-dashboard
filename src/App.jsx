@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { DataSourceProvider } from "./context/DataSourceContext";
+import { DataSourceProvider } from "./contexts/DataSourceContext";
 import MainLayout from "./layouts/MainLayout";
 import Dashboard from "./pages/Dashboard";
 

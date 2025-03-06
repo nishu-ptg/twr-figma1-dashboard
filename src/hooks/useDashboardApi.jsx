@@ -1,4 +1,4 @@
-import { useDataSource } from "../context/DataSourceContext";
+import { useDataSource } from "../contexts/DataSourceContext";
 import useFetchData from "./useFetchData";
 import * as DashboardData from "../data/dashboardData";
 
@@ -50,12 +50,12 @@ export const useWeeklyActivity = () => {
 export const useExpenseStatistics = () => {
   const { useApiData } = useDataSource();
 
-  const defaultData = DashboardData.ExpenseStatisticsData;
+  const defaultData = DashboardData.expenseStatisticsData;
 
   const { apiData, loading, error } = useFetchData(
     `${apiUrl}/expense-list`,
     useDataSource().useApiData,
-    DashboardData.weeklyActivityData
+    defaultData
   );
 
   // const data = useApiData ? apiData?.data ?? [] : apiData;
@@ -77,4 +77,12 @@ export const useExpenseStatistics = () => {
     : defaultData;
 
   return { data, loading, error };
+};
+
+export const useQuickTransfer = () => {
+  return useFetchData("", false, DashboardData.quickTransferData);
+};
+
+export const useBalanceHistory = () => {
+  return useFetchData("", false, DashboardData.balanceHistorytData);
 };
