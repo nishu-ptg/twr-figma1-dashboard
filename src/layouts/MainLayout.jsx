@@ -11,8 +11,10 @@ const Layout = ({ children }) => {
   return (
     <div className="flex h-screen w-full md:bg-[#f5f7fa]">
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
       <div className="flex flex-col flex-1">
         <Topbar toggleSidebar={toggleSidebar} />
+
         <main className="flex-1 overflow-auto">{children}</main>
       </div>
     </div>

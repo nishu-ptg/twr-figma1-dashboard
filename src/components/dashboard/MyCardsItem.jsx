@@ -1,5 +1,3 @@
-import React from "react";
-
 const formatValidity = (validity) => {
   if (/^\d{2}\/\d{2}$/.test(validity)) return validity;
 

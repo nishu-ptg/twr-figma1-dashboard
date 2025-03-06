@@ -1,13 +1,14 @@
-import React from "react";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   BarElement,
+  Tooltip,
+  Legend,
 } from "chart.js";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const WeeklyActivityChart = ({ data = [] }) => {
   const labels = data?.map((item) => item?.days) ?? [];
@@ -45,7 +46,6 @@ const WeeklyActivityChart = ({ data = [] }) => {
   const stepSize = Math.ceil(maxValue / 5 / magnitude) * magnitude;
 
   const options = {
-    responsive: true,
     maintainAspectRatio: false,
     plugins: {
       datalabels: {
@@ -66,7 +66,6 @@ const WeeklyActivityChart = ({ data = [] }) => {
         },
       },
       tooltip: {
-        enabled: true,
         displayColors: false,
         callbacks: {
           label: (tooltipItem) => tooltipItem.raw,

@@ -1,5 +1,5 @@
-import React from "react";
 import { useBalanceHistory } from "../../hooks/useDashboardApi";
+import { SectionHeader, SectionBody } from "../common";
 import BalanceHistoryChart from "./BalanceHistoryChart";
 
 const BalanceHistory = () => {
@@ -7,17 +7,12 @@ const BalanceHistory = () => {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="header-area">
-        <h2>Balance History</h2>
-      </div>
+      <SectionHeader>Balance History</SectionHeader>
+
       <div className="rounded-card px-[10px] md:px-[22px] py-[24px] flex items-center flex-1">
-        {loading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p className="text-red-500">Error: {error}</p>
-        ) : (
+        <SectionBody loading={loading} error={error}>
           <BalanceHistoryChart data={data} />
-        )}
+        </SectionBody>
       </div>
     </div>
   );

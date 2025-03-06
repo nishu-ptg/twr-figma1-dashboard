@@ -5,20 +5,6 @@ import * as DashboardData from "../data/dashboardData";
 const apiUrl = import.meta.env.VITE_ENDPOINT1_API_BASE_URL;
 // const { useApiData } = useDataSource();
 
-export const useGetRecentTransactions = () => {
-  const { useApiData } = useDataSource();
-
-  const { apiData, loading, error } = useFetchData(
-    `${apiUrl}/recent-transactions-list`,
-    useApiData,
-    DashboardData.recentTransactionsData
-  );
-
-  const data = useDataSource().useApiData ? apiData?.data ?? [] : apiData;
-
-  return { data, loading, error };
-};
-
 export const useGetMyCards = () => {
   const { useApiData } = useDataSource();
 
@@ -29,6 +15,20 @@ export const useGetMyCards = () => {
   );
 
   const data = useApiData ? apiData?.data ?? [] : apiData;
+
+  return { data, loading, error };
+};
+
+export const useGetRecentTransactions = () => {
+  const { useApiData } = useDataSource();
+
+  const { apiData, loading, error } = useFetchData(
+    `${apiUrl}/recent-transactions-list`,
+    useApiData,
+    DashboardData.recentTransactionsData
+  );
+
+  const data = useDataSource().useApiData ? apiData?.data ?? [] : apiData;
 
   return { data, loading, error };
 };

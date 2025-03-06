@@ -1,5 +1,3 @@
-import React from "react";
-
 const QuickTransferUser = ({ index, user, isActive, onClick }) => {
   const { name, designation } = user;
 

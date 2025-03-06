@@ -9,7 +9,6 @@ const useFetchData = (url = "", shouldFetch = true, defaultData = []) => {
   const fetchData = async () => {
     if (shouldFetch) {
       setLoading(true);
-      setError(null);
 
       try {
         const response = await getData(url);
@@ -19,8 +18,6 @@ const useFetchData = (url = "", shouldFetch = true, defaultData = []) => {
       } finally {
         setLoading(false);
       }
-    } else {
-      setApiData(defaultData);
     }
   };
 
