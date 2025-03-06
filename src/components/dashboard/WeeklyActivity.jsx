@@ -32,7 +32,7 @@ const WeeklyActivity = () => {
       <div className="header-area">
         <h2>Weekly Activity</h2>
       </div>
-      <div className="rounded-card px-[30px] py-[24px] flex items-center flex-1 ">
+      <div className="rounded-card px-[10px] md:px-[30px] py-[24px] flex items-center flex-1 ">
         {loading ? (
           <p>Loading...</p>
         ) : error ? (

@@ -29,7 +29,7 @@ const RecentTransaction = () => {
       <div className="header-area">
         <h2>Recent Transaction</h2>
       </div>
-      <div className="rounded-card p-[25px] flex items-center flex-1">
+      <div className="rounded-card p-[10px] md:p-[25px] flex items-center flex-1">
         {loading ? (
           <p>Loading...</p>
         ) : error ? (

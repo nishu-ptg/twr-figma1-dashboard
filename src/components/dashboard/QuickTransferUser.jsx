@@ -14,8 +14,8 @@ const QuickTransferUser = ({ index, user, isActive }) => {
         alt="Avatar"
         className="w-[70px] h-[70px] rounded-full"
       />
-      <p className="mt-3">{name}</p>
-      <p className="text-[#718EBF]">{designation}</p>
+      <p className="mt-3 text-center">{name}</p>
+      <p className="text-[#718EBF] text-center">{designation}</p>
     </div>
   );
 };

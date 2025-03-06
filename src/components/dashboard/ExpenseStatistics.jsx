@@ -7,7 +7,7 @@ const ExpenseStatistics = () => {
   const defaultData = useMemo(
     () => ({
       labels: ["Investment", "Entertainment", "Bill Expense", "Others"],
-      values: [40, 25, 15, 25],
+      values: [37.5, 25, 12.5, 25],
       colors: ["#fa00ff", "#343c6a", "#fc7900", "#1814f3", "#ff0000"],
     }),
     []

@@ -21,7 +21,7 @@ const BalanceHistory = () => {
       <div className="header-area">
         <h2>Balance History</h2>
       </div>
-      <div className="rounded-card px-[22px] py-[24px] flex items-center flex-1">
+      <div className="rounded-card px-[10px] md:px-[22px] py-[24px] flex items-center flex-1">
         <BalanceHistoryChart data={defaultData} />
       </div>
     </div>

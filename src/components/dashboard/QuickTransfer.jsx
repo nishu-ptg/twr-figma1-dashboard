@@ -13,7 +13,7 @@ const QuickTransfer = () => {
       <div className="header-area">
         <h2>Quick Transfer</h2>
       </div>
-      <div className="rounded-card px-[25px] py-[35px] flex flex-col justify-between flex-1">
+      <div className="rounded-card px-0 md:px-[25px] py-[35px] flex flex-col justify-between flex-1">
         <div className="flex flex-1 w-full gap-[30px]">
           <div className="flex flex-1 justify-between">
             {defaultData.map((user, index) =>
@@ -33,7 +33,7 @@ const QuickTransfer = () => {
             </button>
           </div>
         </div>
-        <div className="flex w-full h-[50px]">
+        <div className="flex w-full h-[50px] mt-[20px]">
           <div className="flex h-full items-center text-[#718EBF] mr-[28px]">
             Write Amount
           </div>
@@ -41,7 +41,7 @@ const QuickTransfer = () => {
             <div className="flex flex-1 h-full items-center">
               <input
                 type="text"
-                className="w-full bg-transparent border-none outline-none px-[30px] text-[#718EBF]"
+                className="w-full bg-transparent border-none outline-none px-[18px] md:px-[30px] text-[#718EBF]"
                 value="525.50"
               />
             </div>
