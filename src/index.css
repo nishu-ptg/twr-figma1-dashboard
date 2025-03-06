@@ -46,9 +46,9 @@ body {
     brightness(99%) contrast(104%);
 }
 
-.sidebar-menu-item.active::before {
+/* .sidebar-menu-item.active::before {
   @apply content-[''] absolute left-[-6px] top-0 w-[12px] h-full bg-[#2d60ff] rounded-full;
-}
+} */
 
 .topbar-icon {
   @apply hidden md:flex items-center justify-center w-[50px] h-[50px] bg-[#f5f7fa] rounded-full hover:bg-[#f1f1f1];
