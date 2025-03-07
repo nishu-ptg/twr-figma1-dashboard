@@ -10,7 +10,7 @@ export const useGetMyCards = () => {
 
   const { apiData, loading, error } = useFetchData(
     `${apiUrl}/card-list`,
-    useDataSource().useApiData,
+    useApiData,
     DashboardData.myCardsData
   );
 
@@ -28,7 +28,7 @@ export const useGetRecentTransactions = () => {
     DashboardData.recentTransactionsData
   );
 
-  const data = useDataSource().useApiData ? apiData?.data ?? [] : apiData;
+  const data = useApiData ? apiData?.data ?? [] : apiData;
 
   return { data, loading, error };
 };
@@ -38,7 +38,7 @@ export const useWeeklyActivity = () => {
 
   const { apiData, loading, error } = useFetchData(
     `${apiUrl}/weekly-activity-list`,
-    useDataSource().useApiData,
+    useApiData,
     DashboardData.weeklyActivityData
   );
 
@@ -54,7 +54,7 @@ export const useExpenseStatistics = () => {
 
   const { apiData, loading, error } = useFetchData(
     `${apiUrl}/expense-list`,
-    useDataSource().useApiData,
+    useApiData,
     defaultData
   );
 

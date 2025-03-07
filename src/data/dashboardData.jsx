@@ -36,9 +36,10 @@ export const expenseStatisticsData = {
 };
 
 export const quickTransferData = [
-  { name: "Livia Bator", designation: "CEO" },
-  { name: "Randy Press", designation: "Director" },
-  { name: "Workman", designation: "Designer" },
+  { id: 1, name: "Livia Bator", designation: "CEO" },
+  { id: 2, name: "Randy Press", designation: "Director" },
+  { id: 3, name: "Workman", designation: "Designer" },
+  { id: 4, name: "Jane Doe", designation: "Developer" },
 ];
 
 export const balanceHistorytData = [

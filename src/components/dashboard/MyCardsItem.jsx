@@ -27,6 +27,7 @@ const formatCardNumber = (cardNumber) => {
 
 const MyCardsItem = ({ index, card }) => {
   const { name, balance, card_number, validity } = card;
+
   return (
     <div
       className={`c-card c-card-${index} col-span-2 md:col-span-1 rounded-card flex flex-col h-full font-lato text-white`}

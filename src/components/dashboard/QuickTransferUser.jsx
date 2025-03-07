@@ -1,5 +1,5 @@
-const QuickTransferUser = ({ index, user, isActive, onClick }) => {
-  const { name, designation } = user;
+const QuickTransferUser = ({ user, isActive, onClick }) => {
+  const { id, name, designation } = user;
 
   return (
     <div
@@ -9,7 +9,7 @@ const QuickTransferUser = ({ index, user, isActive, onClick }) => {
       onClick={onClick}
     >
       <img
-        src={`/assets/images/user${index}.svg`}
+        src={`/assets/images/user${id}.png`}
         alt="Avatar"
         className="w-[70px] h-[70px] rounded-full"
       />
