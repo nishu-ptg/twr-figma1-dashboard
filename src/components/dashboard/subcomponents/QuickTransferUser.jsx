@@ -1,7 +1,5 @@
-// subcomponents/QuickTransferUser.jsx
 import React from "react";
 import QuickTransferUserItem from "./QuickTransferUserItem";
-import { SectionBody } from "../../common";
 
 const QuickTransferUser = ({
   data,
@@ -9,8 +7,6 @@ const QuickTransferUser = ({
   setActiveIndex,
   startIndex,
   setStartIndex,
-  loading,
-  error,
 }) => {
   const getVisibleUsers = () => {
     const visible = [];
@@ -30,20 +26,16 @@ const QuickTransferUser = ({
   return (
     <div className="flex flex-1 w-full gap-[30px]">
       <div className="flex flex-1 justify-between overflow-hidden">
-        <SectionBody loading={loading} error={error}>
-          <div className="flex flex-1 justify-between">
-            {getVisibleUsers().map((user, index) => (
-              <QuickTransferUserItem
-                key={index}
-                user={user}
-                isActive={activeIndex === (startIndex + index) % data.length}
-                onClick={() =>
-                  setActiveIndex((startIndex + index) % data.length)
-                }
-              />
-            ))}
-          </div>
-        </SectionBody>
+        <div className="flex flex-1 justify-between">
+          {getVisibleUsers().map((user, index) => (
+            <QuickTransferUserItem
+              key={index}
+              user={user}
+              isActive={activeIndex === (startIndex + index) % data.length}
+              onClick={() => setActiveIndex((startIndex + index) % data.length)}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="flex items-center">

@@ -1,5 +1,5 @@
 const formatDate = (date) => {
-  if (/^\d+ [A-Za-z]+ \d+$/.test(date)) return date;
+  if (/^\d+ \w+ \d+$/.test(date)) return date;
 
   const newDate = new Date(date);
   if (isNaN(newDate.getTime())) return date;
