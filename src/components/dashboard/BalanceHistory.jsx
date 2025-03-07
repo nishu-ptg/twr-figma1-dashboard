@@ -1,6 +1,6 @@
 import { useBalanceHistory } from "../../hooks/useDashboardApi";
 import { SectionHeader, SectionBody } from "../common";
-import BalanceHistoryChart from "./BalanceHistoryChart";
+import BalanceHistoryChart from "./subcomponents/BalanceHistoryChart";
 
 const BalanceHistory = () => {
   const { apiData: data, loading, error } = useBalanceHistory();

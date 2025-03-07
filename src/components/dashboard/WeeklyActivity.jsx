@@ -1,6 +1,6 @@
 import { useWeeklyActivity } from "../../hooks/useDashboardApi";
 import { SectionHeader, SectionBody } from "../common";
-import WeeklyActivityChart from "./WeeklyActivityChart";
+import WeeklyActivityChart from "./subcomponents/WeeklyActivityChart";
 
 const WeeklyActivity = () => {
   const { data, loading, error } = useWeeklyActivity();

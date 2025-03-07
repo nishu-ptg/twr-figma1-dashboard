@@ -1,6 +1,6 @@
 import { useGetMyCards } from "../../hooks/useDashboardApi";
 import { SectionHeader, SectionBody } from "../common";
-import MyCardsItem from "./MyCardsItem";
+import MyCardsItem from "./subcomponents/MyCardsItem";
 
 const MyCards = () => {
   const { data, loading, error } = useGetMyCards();

@@ -1,4 +1,4 @@
-const QuickTransferUser = ({ user, isActive, onClick }) => {
+const QuickTransferUserItem = ({ index, user, isActive, onClick }) => {
   const { id, name, designation } = user;
 
   return (
@@ -19,4 +19,4 @@ const QuickTransferUser = ({ user, isActive, onClick }) => {
   );
 };
 
-export default QuickTransferUser;
+export default QuickTransferUserItem;

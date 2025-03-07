@@ -1,6 +1,6 @@
 import { useExpenseStatistics } from "../../hooks/useDashboardApi";
 import { SectionHeader, SectionBody } from "../common";
-import ExpenseStatisticsChart from "./ExpenseStatisticsChart";
+import ExpenseStatisticsChart from "./subcomponents/ExpenseStatisticsChart";
 
 const ExpenseStatistics = () => {
   const { data, loading, error } = useExpenseStatistics();

@@ -1,11 +1,4 @@
-import {
-  MyCards,
-  RecentTransactions,
-  WeeklyActivity,
-  ExpenseStatistics,
-  QuickTransfer,
-  BalanceHistory,
-} from "../components/dashboard";
+import * as PageComponent from "../components/dashboard";
 
 const Dashboard = () => {
   return (
@@ -13,30 +6,30 @@ const Dashboard = () => {
       {/* 1st row */}
       <div className="grid grid-cols-12 gap-[30px]">
         <div className="col-span-12 lg:col-span-8 gap-[30px]">
-          <MyCards />
+          <PageComponent.MyCards />
         </div>
         <div className="flex flex-col col-span-12 lg:col-span-4">
-          <RecentTransactions />
+          <PageComponent.RecentTransactions />
         </div>
       </div>
 
       {/* 2nd row */}
       <div className="grid grid-cols-12 gap-[30px]">
         <div className="col-span-12 lg:col-span-8 gap-[30px]">
-          <WeeklyActivity />
+          <PageComponent.WeeklyActivity />
         </div>
         <div className="flex flex-col col-span-12 lg:col-span-4">
-          <ExpenseStatistics />
+          <PageComponent.ExpenseStatistics />
         </div>
       </div>
 
       {/* 3rd row */}
       <div className="grid grid-cols-12 gap-[30px]">
         <div className="col-span-12 lg:col-span-5 gap-[30px]">
-          <QuickTransfer />
+          <PageComponent.QuickTransfer />
         </div>
         <div className="col-span-12 lg:col-span-7">
-          <BalanceHistory />
+          <PageComponent.BalanceHistory />
         </div>
       </div>
     </div>

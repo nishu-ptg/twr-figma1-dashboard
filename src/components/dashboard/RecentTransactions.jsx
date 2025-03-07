@@ -1,6 +1,6 @@
 import { useGetRecentTransactions } from "../../hooks/useDashboardApi";
 import { SectionHeader, SectionBody } from "../common";
-import RecentTransactionItem from "./RecentTransactionsItem";
+import RecentTransactionItem from "./subcomponents/RecentTransactionsItem";
 
 const RecentTransaction = () => {
   const bgColors = ["#fff5d9", "#e7edff", "#dcfaf8"];
